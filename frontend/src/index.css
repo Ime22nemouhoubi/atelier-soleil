@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background-color: theme('colors.cream');
+  color: theme('colors.ink');
+  font-family: theme('fontFamily.body');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Arabic mode: switch font + direction */
+html[dir='rtl'] body {
+  font-family: theme('fontFamily.arabic');
+}
+
+/* Tasteful link defaults */
+a { color: inherit; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: theme('colors.sand'); }
+::-webkit-scrollbar-thumb {
+  background: theme('colors.rose.300');
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: theme('colors.rose.500'); }
+
+/* Subtle decorative gradient mesh used on hero — royal blue tones */
+.mesh {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(93, 118, 207, 0.30), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(184, 190, 209, 0.30), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(30, 42, 140, 0.18), transparent 50%);
+}
+
+/* Page transition fade-in */
+.fade-in { animation: fadeIn 0.4s ease-out both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

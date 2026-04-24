@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#faf8f5"/>
+  <!-- Decorative circle reminiscent of the FASHION ring in the logo -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#c49960" stroke-width="0.8" opacity="0.4"/>
+  <!-- Monogram: A and S intertwined in a script style -->
+  <g fill="#c49960">
+    <!-- A: slanted serif-style capital -->
+    <path d="M 18 46 L 25 18 L 29 18 L 36 46 L 32 46 L 30 38 L 23 38 L 21 46 Z M 24 34 L 29 34 L 26.5 23 Z" fill="#c49960"/>
+    <!-- S: script flourish style -->
+    <path d="M 45 24 Q 45 19 40 19 Q 35 19 35 24 Q 35 28 40 29 Q 47 30 47 36 Q 47 42 40 42 Q 33 42 33 36 L 36 36 Q 36 39 40 39 Q 44 39 44 36 Q 44 32 40 31 Q 32 30 32 24 Q 32 16 40 16 Q 48 16 48 24 Z" fill="#c49960"/>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+# render.yaml — Atelier Soleil Render deployment blueprint
+# Optional file for deploying to Render (Railway has its own config via nixpacks.toml).
+
+services:
+  - type: web
+    name: atelier-soleil-api
+    runtime: node
+    plan: starter
+    region: frankfurt
+    rootDir: backend
+    buildCommand: npm install && cd ../frontend && npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: atelier-soleil-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: PORT
+        value: 4000
+      - key: DB_PATH
+        value: /var/data/ateliersoleil.db
+      - key: UPLOADS_DIR
+        value: /var/data/uploads
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGIN
+        value: "*"
